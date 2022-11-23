@@ -1,0 +1,21 @@
+#+title: README
+
+* Deep Ocean Theme for Emacs
+This is a port of the Deep Ocean theme for Emacs. It was inspired from the Deep Ocean theme for [[https://github.com/marko-cerovac/material.nvim#-features][Neovim]] and [[https://marketplace.visualstudio.com/items?itemName=itsdevdom.theme-deep-ocean][VSCode]].
+
+**I do not consider it complete as it only server my basic editor needs but I will try to update it whenever I find that some face just dosen't
+look right.**
+
+** Screenshots
+TODO Add screenshots
+
+** Installation
+This isn't currently available on any repository like ELPA/MELPA etc so you have to manually ~git clone~ it and install it.
+You can also use ~straight.el~ to simplify the process.
+
+** Contributions
+Although this is just my personal project, if you want to suggest some changes or improve something you are free to open up a issue or
+a PR. All contributions are under the terms of GNU General Public License v3.0 or (at your option) any later version.
+
+** License
+The project is licensed under the terms of GNU General Public License v3.0. See the [[LICENSE]] file.
