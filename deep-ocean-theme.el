@@ -1,8 +1,9 @@
 ;;; deep-ocean-theme.el --- Material Deep Ocean theme
 ;; Copyright (C) 2022 Arijit Dey
+;; Version: 0.1.0
 
 ;; Author: Arijit Dey <arijit79@protonmail.com>
-;; Keywords: dark theme deep ocean
+;; Keywords: faces
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -68,8 +69,7 @@
 
       ;; Syntax
       ("deep-ocean.syntax.disabled"                    . "#464B5D")
-      ("deep-ocean.syntax.comments"                    . "#464B5D")
-      )
+      ("deep-ocean.syntax.comments"                    . "#464B5D"))
     "Color pallate for Deep Ocean theme"))
 
 (defmacro deep-ocean-theme-with-color-variables (&rest body)
@@ -92,9 +92,17 @@
   `(line-number                         ((t (:foreground ,deep-ocean.editor.inactive-line-number))))
   `(cursor                              ((t (:background ,deep-ocean.editor.alt-bg))))
   `(hl-line                             ((t (:background ,deep-ocean.editor.active))))
+  `(highlight                           ((t (:background ,deep-ocean.editor.highlight))))
+
+  ;; UI elements
+  `(custom-button                       ((t (:foreground ,deep-ocean.colors.purple :background ,deep-ocean.editor.border))))
+  `(custom-link                         ((t (:foreground ,deep-ocean.colors.blue :underline t))))
+  `(custom-state                        ((t (:foreground ,deep-ocean.colors.green))))
+  `(widget-field                        ((t (:background ,deep-ocean.editor.border))))
+  `(widget-inactive                     ((t (:foreground ,deep-ocean.colors.darkred :background ,deep-ocean.syntax.disabled))))
+  `(custom-group-tag                    ((t (:foreground ,deep-ocean.colors.accent :weight bold :height 150))))
   `(mode-line                           ((t (:background ,deep-ocean.editor.active))))
   `(mode-line-inactive                  ((t (:background ,deep-ocean.editor.bg))))
-  `(highlight                           ((t (:background ,deep-ocean.editor.highlight))))
   `(fringe                              ((t (:background ,deep-ocean.editor.border))))
 
   ;; Minibuffer and completion
@@ -130,6 +138,10 @@
   `(doom-dashboard-footer               ((t (:foreground ,deep-ocean.colors.darkblue))))
   `(doom-dashboard-loaded               ((t (:foreground ,deep-ocean.colors.darkblue))))
   `(doom-modeline-buffer-modified       ((t (:foreground ,deep-ocean.colors.red :weight bold))))
+  `(doom-modeline-evil-normal-state     ((t (:foreground ,deep-ocean.colors.green))))
+  `(doom-modeline-evil-visual-state     ((t (:foreground ,deep-ocean.colors.orange))))
+  `(doom-modeline-evil-operator-state   ((t (:foreground ,deep-ocean.colors.paleblue))))
+
 
   ;; Company mode
   `(company-tooltip                     ((t (:foreground ,deep-ocean.editor.fg :background ,deep-ocean.editor.border))))
@@ -138,6 +150,12 @@
   `(company-tooltip-mouse               ((t (:foreground ,deep-ocean.editor.active :background ,deep-ocean.colors.darkcyan))))
   `(company-tooltip-scrollbar-track     ((t (:background ,deep-ocean.editor.selection))))
   `(company-tooltip-scrollbar-thumb     ((t (:background ,deep-ocean.colors.paleblue))))
+
+  ;; Corfu
+  `(corfu-default                       ((t (:foreground ,deep-ocean.editor.fg :background ,deep-ocean.editor.border))))
+  `(corfu-current                       ((t (:foreground ,deep-ocean.editor.active :background ,deep-ocean.colors.accent))))
+  `(completions-common-part             ((t (:foreground ,deep-ocean.editor.fg-dark :weight bold))))
+  `(completions-first-difference        ((t (:foreground ,deep-ocean.colors.paleblue :weight bold))))
 
   ;; Org mode
   `(org-link                            ((t (:foreground ,deep-ocean.colors.paleblue))))
@@ -163,8 +181,9 @@
   ;; Language specific styling
   `(rust-builtin-formatting-macro       ((t (:foreground ,deep-ocean.colors.cyan))))
   `(rust-unsafe                         ((t (:foreground ,deep-ocean.colors.red))))
-  )
- )
+  `(web-mode-html-tag-face              ((t (:foreground ,deep-ocean.colors.cyan))))
+  `(web-mode-html-attr-name-face        ((t (:foreground ,deep-ocean.colors.purple))))
+  ))
 
 (provide-theme 'deep-ocean)
 ;;; deep-ocean-theme.el ends here
